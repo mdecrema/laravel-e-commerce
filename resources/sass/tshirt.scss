@@ -1,0 +1,23 @@
+.page-title {
+    height: 250px;
+    background-color: lightgrey;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5%;
+}
+
+.item {
+    height: 400px;
+    border: 1px solid orangered;
+    .item-picture {
+        width: 100%;
+        height: 75%;
+    }
+
+    .item-text {
+        width: 100%;
+        height: 25%;
+        border: 1px solid yellow;
+        text-align: center;
+    }
+}
