@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderResumeMail;
 use Cartalyst\Stripe\Laravel\StripeServiceProvider;
 use Stripe;
 use Session;
@@ -28,8 +30,12 @@ class CheckoutController extends Controller
                 "source" => $request->stripeToken,
                 "description" => "Making test payment." 
         ]);
+
+        $mail = $request->mail;
   
         Session::flash('success', 'Payment has been successfully processed.');
+
+        Mail::to($mail)->send(new OrderResumeMail());
           
         return view('order-completed');
     }

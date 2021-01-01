@@ -29,6 +29,13 @@ Route::resource('/hoodies', 'HoodiesController');
 // Product Show 
 Route::get('/product/show/{id}', 'TshirtController@show')->name('item-details');
 
+// Product Create
+Route::get('/products/create', 'ProductController@create')->name('products.create');
+// Product Store
+Route::post('/products/create', 'ProductController@store')->name('products.store');
+// Product Show
+Route::get('/new/product/show/{id}', 'ProductController@show')->name('product.show');
+
 // Cart
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
@@ -37,4 +44,4 @@ Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy')
 // Check-out 
 Route::get('/payment/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/payment/completed/success', 'CheckoutController@checkout')->name('checkout.checkout');
-Route::post('/success','CheckoutController@afterpayment')->name('order-summary');
+Route::post('/success','CheckoutController@afterpayment')->name('checkout.completed');
