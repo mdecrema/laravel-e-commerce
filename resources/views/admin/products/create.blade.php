@@ -6,7 +6,7 @@
     <div class="row">
         <h2>Create New Product</h2>
         
-        <form action="{{ route("products.store") }}" method="post">
+        <form action="{{ route("admin.products.store") }}" method="post">
             @csrf
             @method("POST")
 

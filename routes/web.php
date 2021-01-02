@@ -19,6 +19,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+
+    // Product Create
+    Route::get('/products/create', 'ProductController@create')->name('products.create');
+    // Product Store
+    Route::post('/products/create', 'ProductController@store')->name('products.store');
+    // Product Show
+    //Route::get('/new/product/show/{id}', 'ProductController@show')->name('product.show');
+
+});
+
 // Landing Page
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -28,13 +39,6 @@ Route::resource('/hoodies', 'HoodiesController');
 
 // Product Show 
 Route::get('/product/show/{id}', 'TshirtController@show')->name('item-details');
-
-// Product Create
-Route::get('/products/create', 'ProductController@create')->name('products.create');
-// Product Store
-Route::post('/products/create', 'ProductController@store')->name('products.store');
-// Product Show
-Route::get('/new/product/show/{id}', 'ProductController@show')->name('product.show');
 
 // Cart
 Route::get('/cart', 'CartController@index')->name('cart.index');

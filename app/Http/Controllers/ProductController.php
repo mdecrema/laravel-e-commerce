@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $user = User::all();
 
-        return view("products.create", compact('user'));
+        return view("admin.products.create", compact('user'));
     }
 
     /**
@@ -84,7 +84,7 @@ class ProductController extends Controller
         $newProduct->fill($data);
         $newProduct->save();
 
-        return redirect()->route("product.show");
+        return redirect()->route("home");
     }
 
     /**
@@ -95,9 +95,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-       $product = Product::find($id);
+       $newproduct = Product::find($id);
 
-        return view('item-details', ['id'=>$product]);
+        return view('item-details', ['product'=>$newproduct]);
     }
 
     /**
