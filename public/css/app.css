@@ -10905,11 +10905,22 @@ a.text-dark:focus {
 
 .navbar {
   height: 100px;
+  overflow: hidden;
 }
 
 .navbar li {
-  width: 100px;
+  width: 80px;
   text-align: center;
+}
+
+.navbar li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  color: #FF4901;
+  border-bottom: 2px solid #FF4901;
 }
 
 .navbar .logo-box {
@@ -10918,16 +10929,16 @@ a.text-dark:focus {
   overflow: hidden;
 }
 
-.navbar .logo-box img {
-  width: 100px;
-  height: 100px;
+.navbar .logo-box #logo-img {
+  width: 100%;
+  height: 100%;
 }
 
 .fondo {
   width: 100vw;
   height: 500px;
   padding: 5% 2%;
-  border-top: 5px solid #000;
+  border-top: 2px solid #000;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
   position: relative;
@@ -11126,7 +11137,7 @@ a.text-dark:focus {
 }
 
 .hero {
-  height: 80vh;
+  height: 70vh;
   border: 1px solid red;
 }
 

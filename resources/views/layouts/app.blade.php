@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="logo-box">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img id="logo-img" src="#" />
+                        <img id="logo-img" src="{{ asset('storage/volcano-logo.png')}}" />
                         {{-- {{ asset('volcano-mountain-logo.webp') }} --}}
                     </a>
                 </div>
