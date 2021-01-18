@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
 
-class TshirtController extends Controller
+class ContentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +13,7 @@ class TshirtController extends Controller
      */
     public function index()
     {
-
-        $products = Product::all();
-
-        return view('/tshirt', compact('products'));
+        //
     }
 
     /**
@@ -49,9 +45,7 @@ class TshirtController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id); 
-        
-        return view("item-details", ["product" => $product]);
+        //
     }
 
     /**

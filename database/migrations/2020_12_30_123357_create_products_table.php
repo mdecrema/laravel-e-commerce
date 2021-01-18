@@ -31,6 +31,7 @@ class CreateProductsTable extends Migration
             $table->float('amount', 6, 2);
             $table->SmallInteger('availability')->default(1);
             $table->SmallInteger('valutazione');
+            $table->string('appView')->nullable();
 
             $table->timestamps();
         });

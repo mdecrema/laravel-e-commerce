@@ -37,22 +37,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li>
+                        <li class="nav-item">
                            <a href="{{ route('tshirt.index') }}">T-Shirt</a>
                         </li>
-                        <li>
+                        <li class="nav-item">
                             <a href="{{ route('hoodies.index') }}">Hoodies</a>
                         </li>
-                        <li>
+                        <li class="nav-item">
                             <a href="#">Pants</a>
                          </li>
-                         <li>
+                         <li class="nav-item">
                              <a href="#">Sneakers</a>
                          </li>
-                         <li>
+                         <li class="nav-item">
                             <a href="#">News</a>
                          </li>
-                         <li>
+                         <li class="nav-item">
                              <a href="#">Contacts</a>
                          </li>
                     </ul>

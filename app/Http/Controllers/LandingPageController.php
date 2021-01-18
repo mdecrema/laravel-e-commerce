@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+Use App\User;
 
-class TshirtController extends Controller
+class LandingPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,9 @@ class TshirtController extends Controller
      */
     public function index()
     {
-
         $products = Product::all();
 
-        return view('/tshirt', compact('products'));
+        return view('index', compact('products'));
     }
 
     /**
@@ -49,9 +49,7 @@ class TshirtController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id); 
-        
-        return view("item-details", ["product" => $product]);
+        //
     }
 
     /**
@@ -86,5 +84,32 @@ class TshirtController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function homeUpdate() 
+    {
+        $user = User::all();
+
+        return view('admin.products.home-update', compact('user'));
+    }   
+
+    public function homeUpdateStore(Request $request)
+    {
+        $data = $request->all();
+
+        $request->validate([
+            'product1' => "required|numeric",
+            'product2' => "required|numeric"
+        ]);
+
+        $showProduct = new Product;
+        //$newProduct->fill($data);
+
+        $showProduct->product1 = $data['product1'];
+        $showProduct->product2 = $data['product2'];
+
+        $showProduct->save();
+
+        return view('index', compact('showProduct'));
     }
 }

@@ -13,20 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'LandingPageController@index')->name('index');
 
 Auth::routes();
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-
+    // Admin Landing Page
+    Route::get('/dashboard', 'ProductController@index')->name('dashboard');
+    // Products -> all 
+    Route::get('/dashboard/products/all', 'ProductController@productsAll')->name('products.all');
     // Product Create
-    Route::get('/products/create', 'ProductController@create')->name('products.create');
+    Route::get('/dashboard/products/create', 'ProductController@create')->name('products.create');
     // Product Store
-    Route::post('/products/create', 'ProductController@store')->name('products.store');
+    Route::post('/dashboard/products/create', 'ProductController@store')->name('products.store');
     // Product Show
     //Route::get('/new/product/show/{id}', 'ProductController@show')->name('product.show');
+    // Product Update
+    Route::get('/dashboard/products/edit/{id}', 'ProductController@edit')->name('products.edit');
+    // Product Update
+    Route::post('/dashboard/products/update/{id}', 'ProductController@update')->name('products.update');
 
 });
 
