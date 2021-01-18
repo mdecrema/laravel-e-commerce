@@ -101,21 +101,61 @@
             @yield('content')
         </main>
 
-        <footer>
-            <div class="container-fluid">
+        <footer class="fondo" style="background-image: url('{{ asset('storage/footer-img.jpg') }}');background-size:cover;background-position: 0 -150px;background-repeat:no-repeat;">
+            <div class="fondo-opacity"></div>
+            <div class="container">
                 <div class="row">
-                    <div class="contacts col-lg-5">
-                        contacts
+                    <div class="col-lg-5 left">
+                        <ul class="contatti">
+                            <li>
+                                <img id="logofooter" src={logo} alt="" />
+                            </li>
+                            <li>Ragione Sociale: 'Company' S.P.A.</li>
+                            <li>Sede legale: Contrada Colle Delle Api, 100/A</li>
+                            <li>86100 - City(--)</li>
+                            <li>Pec: email@pec.it</li>
+                            <li>Tel: +39 0874 4981</li>
+                            <li>Fax: +39 0874 629584</li>
+                            <li>info@email.it (per segnalazioni degli utenti)</li>
+                            <li>commerciale@email.it</li>
+                            <li>export@email.it</li>
+                            <li>telefono 380-1292455</li>
+                            <li class="copyright">Copyright © All rights reserved.</li>
+                        </ul>
                     </div>
-                    <div class="links col-lg-4">
-                        links
-                    </div>
-                    <div class="social col-lg-3">
-                        social
-                    </div>
-                </div>
-            </div>
-        </footer>
+                    <div class="col-lg-4 central">
+              <h5>COMPANY</h5>
+              <ul>
+                  <li>Company</li>
+                  <li>xxxxxxxx</li>
+                  <li>xxxxxxxx</li>
+                  <li>Infos</li>
+                  <li>Our Mission</li>
+                  <li>Superhydrophobic</li>
+                  <li>Employees</li>
+              </ul>
+              <h5>PRODUCTS</h5>
+              <ul>
+                  <li>*Tipo di materiali usati*</li>
+                  <li>*Link prodotto*</li>
+                  <li>*Link prodotto*</li>
+                  <li>*Servizio clienti*</li>
+                  <li>*Referenze*</li>
+              </ul>
+          </div>
+          <div class="col-lg-3 right">
+          <h5>JOIN US</h5>
+              <div class="social-box">
+                
+              </div>
+              <div class="newsletter-box">
+                <h6>Subscribe our newsletter</h6>
+                <a class="newsletter" href="#">Newsletter</a>
+              </div>
+          </div>
+      </div>
+    </div>
+  </footer>
     </div>
 </body>
 </html>

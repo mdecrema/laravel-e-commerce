@@ -12,7 +12,7 @@
             @if($product->appView=="home")
             {{-- @if ($product->genere=='Dr.') {{-- Qua inserire la categoria del prodotto in modo da filtrare --}}  
             <div class="item col-lg-4">
-            <a href="product/show/{{$product['id']}}" class="btn btn-warning btn-block text-center" role="button">
+            <a href="product/show/{{$product['id']}}" class="btn btn-block text-center" role="button">
                 <div class="item-picture">
                     <img src="{{ asset('storage/'.$product->photo1) }}" alt="item picture" />
                 </div>
