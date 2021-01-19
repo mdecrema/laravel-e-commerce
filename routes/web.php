@@ -32,7 +32,8 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/dashboard/products/edit/{id}', 'ProductController@edit')->name('products.edit');
     // Product Update
     Route::post('/dashboard/products/update/{id}', 'ProductController@update')->name('products.update');
-
+    // Orders
+    Route::get('/dashboard/orders', 'OrderController@index')->name('orders.index');
 });
 
 // Landing Page
