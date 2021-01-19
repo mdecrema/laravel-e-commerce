@@ -26,7 +26,9 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $order = Order::all();
+
+        return view('/shipping-details', compact('order'));
     }
 
     /**

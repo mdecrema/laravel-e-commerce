@@ -51,7 +51,7 @@
                 
                 <div class="total">
                     <h3>Total: € {{Cart::total()}}</h3>
-                    <a href="{{ route('checkout.index') }}" class="">Check-out</a>
+                    <a href="{{ route('order.create') }}" class="">Check-out</a>
                 </div>
                 <div class="">
                     <a href="{{ url('/') }}">Continue Shopping</a>
