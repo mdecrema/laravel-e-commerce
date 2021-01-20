@@ -20,7 +20,7 @@
                 <th scope="col">CAP</th>
                 <th scope="col">N.Telefono</th>
                 <th scope="col">Totale</th>
-                <th scope="col"></th>
+                <th scope="col">Product</th>
               </tr>
             </thead>
             <tbody>
@@ -40,7 +40,26 @@
                 <td>{{ $order->postcode }}</td>
                 <td>{{ $order->phone }}</td>
                 <td>€ {{ $order->total }}</td>
-                <td></td>
+                <td>
+                    @foreach($orderProducts as $item)
+                    @if($order->id == $item->order_id)
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $item->product_id }}</button>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li class="dropdown-item">Quantity: </li>
+                            <li class="dropdown-item">Taglia: </li>
+                            <li class="dropdown-item">Created at: {{ $item->created_at }}</li>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <li class="dropdown-item">
+                                <a href="#">
+                                    Product View
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    @endif
+                    @endforeach
+                </td>
               </tr>
             @endforeach
             </tbody> 

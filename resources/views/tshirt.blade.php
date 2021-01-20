@@ -9,7 +9,7 @@
         </div>
         <div class="row">
         @foreach($products as $product)
-            @if($product->appView=="home")
+            
             {{-- @if ($product->genere=='Dr.') {{-- Qua inserire la categoria del prodotto in modo da filtrare --}}  
             <div class="item col-lg-4">
             <a href="product/show/{{$product['id']}}" class="btn btn-block text-center" role="button">
@@ -23,7 +23,7 @@
             </a>
             </div>
             {{-- @endif --}}
-            @endif
+           
         @endforeach
         </div>
     </div>
