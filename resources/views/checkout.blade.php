@@ -26,16 +26,82 @@
                                                     id="payment-form">
                         @csrf
 
+                        <h2>Shipping Details</h2>
+
                         <div class='form-row row'>
                             <div class='col-xs-12 form-group required'>
-                                <label class='control-label'>E-mail Address</label> <input name="mail"
+                                <label class='control-label'>E-mail Address</label> <input name="email"
                                     class='form-control' size='20' type='text'>
                             </div>
                         </div>
-  
+
                         <div class='form-row row'>
                             <div class='col-xs-12 form-group required'>
-                                <label class='control-label'>Name on Card</label> <input
+                                <label class='control-label'>Nome</label> <input name="firstname"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Cognome</label> <input name="lastname"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Indirizzo di spedizione</label> <input name="address"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Numero Civico</label> <input name="addressNumber"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Città</label> <input name="city"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Provincia</label> <input name="province"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>CAP</label> <input name="postcode"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Numero di cellulare</label> <input name="phone"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Nome e Cognome citofono</label> <input name="nameOnCard"
+                                    class='form-control' size='20' type='text'>
+                            </div>
+                        </div>
+
+        
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-group required'>
+                                <label class='control-label'>Nome Intestatario Carta di Credito</label> <input
                                     class='form-control' size='20' type='text'>
                             </div>
                         </div>
@@ -43,7 +109,7 @@
                         <div class='form-row row'>
                             <div class='col-xs-12 form-group card required'>
                                 <label class='control-label'>Card Number</label> <input
-                                    autocomplete='off' class='form-control card-num' size='20'
+                                    autocomplete='off' class='form-control card-num' size='20' name="cardNumber"
                                     type='text'>
                             </div>
                         </div>
@@ -69,6 +135,13 @@
                         <div class='form-row row'>
                             <div class='col-md-12 hide error form-group'>
                                 <div class='alert-danger alert'>Fix the errors before you begin.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row row">
+                            <div class='col-xs-12 col-md-4 form-group'>
+                                <label class='control-label'>Total €(euro) - </label> <input name="total"
+                                class='form-control' size='20' type='text'>
                             </div>
                         </div>
   

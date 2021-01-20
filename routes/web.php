@@ -52,11 +52,6 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 
 // Check-out 
-// Orders Checkout
-Route::get('/order/details', 'OrderController@create')->name('order.create');
-// Order Shipping Details Store
-//Route::post('/') ---------  TO BE FIXED!!!!
-
 Route::get('/payment/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/payment/completed/success', 'CheckoutController@checkout')->name('checkout.checkout');
 Route::post('/success','CheckoutController@afterpayment')->name('checkout.completed');

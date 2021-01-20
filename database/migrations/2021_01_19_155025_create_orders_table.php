@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
 
             $table->string('firstname');
             $table->string('lastname');
@@ -26,7 +26,6 @@ class CreateOrdersTable extends Migration
             $table->integer('postcode');
             $table->bigInteger('phone');
             $table->string('nameOnCard');
-            $table->integer('cardNumber');
             $table->float('total', 6, 2);
             $table->string('payment_gateway')->default('stripe');
             $table->boolean('shipped')->default(false);

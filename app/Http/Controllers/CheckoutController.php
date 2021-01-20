@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Mail\OrderResumeMail;
 use Cartalyst\Stripe\Laravel\StripeServiceProvider;
 use Stripe;
 use Session;
+use App\Order;
+use App\OrderProduct;
 
 class CheckoutController extends Controller
 {
@@ -31,7 +34,34 @@ class CheckoutController extends Controller
                 "description" => "Making test payment." 
         ]);
 
-        $mail = $request->mail;
+        // Insert into Order Table
+
+        $order = Order::create([
+            'email' => $request->email,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'address' => $request->address,
+            'addressNumber' => $request->addressNumber,
+            'city' => $request->city,
+            'province' => $request->province,
+            'postcode' => $request->postcode,
+            'phone' => $request->phone,
+            'nameOnCard' => $request->nameOnCard,
+            'total' => $request->total,
+            'error' => $request->error,
+        ]);
+
+        // Inser into Product Order Table
+        foreach(Cart::content() as $item) {
+            OrderProduct::create([
+                'order_id' => $order->id,
+                'product_id' => $item->id,
+                //'quantity' => $item->quantity,
+            ]);
+        }
+
+
+        $mail = $request->email;
   
         Session::flash('success', 'Payment has been successfully processed.');
 
