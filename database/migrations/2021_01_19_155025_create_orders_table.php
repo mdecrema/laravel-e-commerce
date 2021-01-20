@@ -16,16 +16,21 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
 
-            $table->SmallInteger('productId');
-            $table->SmallInteger('quantity')->default(1);
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
             $table->string('address');
             $table->SmallInteger('addressNumber');
+            $table->string('city');
+            $table->string('province');
             $table->integer('postcode');
+            $table->bigInteger('phone');
+            $table->string('nameOnCard');
             $table->integer('cardNumber');
-            $table->float('amount', 6, 2);
+            $table->float('total', 6, 2);
+            $table->string('payment_gateway')->default('stripe');
+            $table->boolean('shipped')->default(false);
+            $table->string('error')->nullable();
 
             $table->timestamps();
         });
