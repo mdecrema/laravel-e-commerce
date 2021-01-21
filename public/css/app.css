@@ -15527,6 +15527,10 @@ a.text-dark:focus {
   top: -5px;
 }
 
+.navbar li #cart-icon:hover {
+  border-bottom: none;
+}
+
 .navbar li a {
   color: #000;
   text-decoration: none;
@@ -15841,7 +15845,7 @@ a.text-dark:focus {
 }
 
 .cart-details .cart-img {
-  width: 150px;
+  width: 200px;
   height: 150px;
   display: inline-block;
   overflow: hidden;
