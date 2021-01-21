@@ -59,10 +59,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Cart Icon -->
-                        <li>
-                            @include('header-cart')
-                        </li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -92,6 +88,10 @@
                                 </div>
                             </li>
                         @endguest
+                        <!-- Cart Icon -->
+                        <li>
+                            @include('header-cart')
+                        </li>
                     </ul>
                 </div>
             </div>
